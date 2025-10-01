@@ -21,5 +21,9 @@ const operate = function(op, left, right){
     }
 }
 
+const generateGrid = function(){
+    
+}
+
 
 // console.log(operate('*', 2 ,3));
