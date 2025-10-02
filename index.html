@@ -6,41 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="javascript.js"></script>
+    <script src="javascript.js" defer></script>
 </head>
 
 <body>
     <div id="calculator">
         <div id="display"></div>
-        <div id="grid">
+        <div id="keypad">
             <!-- Row 1 -->
-            <button class="operator">C</button>
-            <button class="operator">(</button>
-            <button class="operator">)</button>
-            <button class="operator">÷</button>
+            <button class="operator" data-val="C">C</button>
+            <button class="operator" data-val="(">(</button>
+            <button class="operator" data-val=")">)</button>
+            <button class="operator" data-val="/">÷</button>
 
             <!-- Row 2 -->
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button class="operator">×</button>
+            <button data-val="7">7</button>
+            <button data-val="8">8</button>
+            <button data-val="9">9</button>
+            <button class="operator" data-val="*">X</button>
 
             <!-- Row 3 -->
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button class="operator">−</button>
+            <button data-val="4">4</button>
+            <button data-val="5">5</button>
+            <button data-val="6">6</button>
+            <button class="operator" data-val="-">-</button>
 
             <!-- Row 4 -->
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button class="operator">+</button>
+            <button data-val="1">1</button>
+            <button data-val="2">2</button>
+            <button data-val="3">3</button>
+            <button class="operator" data-val="+">+</button>
 
             <!-- Row 5 -->
-            <button>0</button>
-            <button>.</button>
-            <button class="equal">=</button>
+            <button data-val="0">0</button>
+            <button data-val=".">.</button>
+            <button class="equal" data-val="=">=</button>
         </div>
     </div>
 
