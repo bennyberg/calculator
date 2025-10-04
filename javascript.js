@@ -68,11 +68,15 @@ document.querySelector('#keypad').addEventListener('click', (e) => {
     }
 
     else {
-        // console.log(first);
-        // console.log(second);
-        // console.log(operator);
+        console.log(first);
+        console.log(operator);
+        console.log(second);
         // console.log(operate(operator, first, second))
-        display.textContent = operate(operator, first, second)
+        first = operate(operator, first, second)
+        display.textContent = first;
+        operatorFlag = false;
+        secondFlag = false;
+
     }
 
 
