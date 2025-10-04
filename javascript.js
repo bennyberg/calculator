@@ -1,12 +1,19 @@
-let left = 0;
-let right = 0;
+let first = 0;
+let second = 0;
 let operator = "";
 let result = 0;
+
+let firstFlag = false
+let operatorFlag = false
+let secondFlag = false;
 
 const display = document.getElementById('display');
 display.textContent = "";
 
 const operate = function (op, left, right) {
+    left = Number(left);
+    right = Number(right);
+
     switch (op) {
         case '+':
             return left + right;
@@ -25,7 +32,7 @@ const operate = function (op, left, right) {
 }
 
 
-const addToDisplay = function(v) {
+const addToDisplay = function (v) {
     display.textContent += v;
 }
 
@@ -36,14 +43,53 @@ document.querySelector('#keypad').addEventListener('click', (e) => {
     if (!btn) return;                  // clicked empty space (not a button)
 
     const val = btn.dataset.val;       // e.g. "7", "+", "=" (from data-val)
-    if (val === '=') {
-        // placeholder: does nothing (no-op)
-        display.textContent = display.textContent;
-        return;
+
+    // first number check
+    if (!firstFlag) {
+        firstFlag = !firstFlag;
+        first = val;
+
     }
 
-    addToDisplay(val);                 // your function: appends val to the display
+    else if (!operatorFlag) {
+        operatorFlag = !operatorFlag;
+        operator = val;
+
+    }
+
+    else if (!secondFlag) {
+        secondFlag = !secondFlag;
+        second = val;
+
+    }
+
+    if (val !== '=') {
+        addToDisplay(val);              
+    }
+
+    else {
+        // console.log(first);
+        // console.log(second);
+        // console.log(operator);
+        // console.log(operate(operator, first, second))
+        display.textContent = operate(operator, first, second)
+    }
+
+
+
+
+
+
+
+
+
+
 });
+
+// document.querySelector('#equal').addEventListener('click', (e) => {
+// }
+
+
 
 
 
